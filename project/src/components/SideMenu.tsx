@@ -97,7 +97,7 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
           </a>
           <div className="flex items-center gap-3 text-gray-600">
             <Mail size={16} className="text-[#0A6E9C] flex-shrink-0" />
-            <span className="text-xs">info@pharmos.in</span>
+            <span className="text-xs">pharmosofficial@gmail.com</span>
           </div>
         </div>
       </div>
