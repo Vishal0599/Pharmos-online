@@ -64,10 +64,9 @@ export default function SupportSection() {
   </div>
 
  {/* Right Side Image */}
-<img
-  src="\location photo.png"
+<img src ="/locationphoto.png" 
   alt="Pharmos Location"
-  className="w-44 h-20 rounded-l object-cover border border-blue-100 shadow-m flex-shrink-0"
+  className="w-44 h-20 rounded-l object-cover border border-blue-100 shadow-md flex-shrink-0"
 />
 </a>
 </section>
