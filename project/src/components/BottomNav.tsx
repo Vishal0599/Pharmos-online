@@ -24,10 +24,9 @@ export default function BottomNav({ active, onSelect }: BottomNavProps) {
   };
 
   return (
-    <nav className=" fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-gray-200 shadow-2xl max-w-md mx-auto">
-      <div className="flex items-center justify-around px-2 py-1">
-        {/* Left tabs */}
-        {tabs.slice(0, 2).map((tab) => {
+    <nav className="fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-gray-200 shadow-2xl">
+       <div className="max-w-7xl mx-auto flex items-center justify-around px-4 py-2">
+         {tabs.slice(0, 2).map((tab) => {
           const Icon = tab.icon;
           const isActive = active === tab.id;
           return (

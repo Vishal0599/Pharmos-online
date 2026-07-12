@@ -32,11 +32,17 @@ function WhatsAppIcon() {
     </svg>
   );
 }
+interface HeroSectionProps {
+  openDoctorModal: () => void;
+}
 
-export default function HeroSection() {
-  const [active, setActive] = useState(0);
+export default function HeroSection({
+  openDoctorModal,
+}: HeroSectionProps) {
 
-  useEffect(() => {
+    const [active, setActive] = useState(0);
+ 
+    useEffect(() => {
     const timer = setInterval(() => setActive((prev) => (prev + 1) % slides.length), 3500);
     return () => clearInterval(timer);
   }, []);
@@ -55,7 +61,7 @@ export default function HeroSection() {
             <h1 className="text-[#F9A825] font-black text-2xl leading-tight flex items-center gap-2">
               {slide.highlight} <span className="text-xl">{slide.icon}</span>
             </h1>
-            <p className="text-gray-600 text-sm mt-2 leading-relaxed">{slide.subtitle}</p>
+              <p className="text-gray-600 text-sm mt-2 leading-relaxed">{slide.subtitle}</p>
           </div>
 
           <div className="flex flex-wrap gap-2 mt-4">
@@ -67,7 +73,7 @@ export default function HeroSection() {
               Order Medicines
             </button>
             <button
-              onClick={() => openWhatsApp("Hello Pharmos, I want to book a doctor consultation.")}
+              onClick={openDoctorModal}
               className="bg-[#F9A825] text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 hover:bg-[#e09520] transition-colors shadow-md"
             >
               Doctor Consultation

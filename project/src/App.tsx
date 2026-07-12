@@ -4,34 +4,61 @@ import QuickActionBanner from "./components/QuickActionBanner";
 import HeroSection from "./components/HeroSection";
 import ConsultationServices from "./components/ConsultationServices";
 import HomeServices from "./components/HomeServices";
-import ActionCards from "./components/ActionCards";
 import WhyChoosePharmos from "./components/WhyChoosePharmos";
 import SupportSection from "./components/SupportSection";
 import BottomNav from "./components/BottomNav";
 import SideMenu from "./components/SideMenu";
+import ConsultationCarousel from "./components/ConsultationCarousel";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("home");
 
+  // Common Doctor Consultation Modal
+  const [showDoctorModal, setShowDoctorModal] = useState(false);
+
   return (
-    <div className="bg-gray-50 min-h-screen flex justify-center">
+    <div className="bg-gray-50 min-h-screen">
       <div className="w-full relative">
-        <SideMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+        <SideMenu
+          open={menuOpen}
+          onClose={() => setMenuOpen(false)}
+        />
 
-        <Header onMenuToggle={() => setMenuOpen((v) => !v)} menuOpen={menuOpen} />
+        <Header
+          onMenuToggle={() => setMenuOpen((v) => !v)}
+          menuOpen={menuOpen}
+        />
 
-        <main className="pt-[76px] pb-24">
+        <main className="pt-16 pb-24">
           <QuickActionBanner />
-          <HeroSection />
-          <ConsultationServices />
+
+          <HeroSection
+            openDoctorModal={() => setShowDoctorModal(true)}
+          />
+
+          <ConsultationCarousel />
+
+          <ConsultationServices
+            showDoctorModal={showDoctorModal}
+            setShowDoctorModal={setShowDoctorModal}
+          />
+
           <HomeServices />
-          <ActionCards />
+
+          {/*<ActionCards
+            openDoctorModal={() => setShowDoctorModal(true)}
+          /> */}
+
           <WhyChoosePharmos />
+
           <SupportSection />
         </main>
 
-        <BottomNav active={activeTab} onSelect={setActiveTab} />
+        <BottomNav
+          active={activeTab}
+          onSelect={setActiveTab}
+        />
       </div>
     </div>
   );

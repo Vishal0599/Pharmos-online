@@ -32,28 +32,44 @@ export default function SupportSection() {
           Chat with Support
         </button>
       </div>
+<a
+  href="https://www.google.com/maps/search/?api=1&query=PHARMOS+Iris+Park+Talawali+Chanda+Indore+Madhya+Pradesh+453771"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-3 bg-blue-50 rounded-xl p-3 flex items-center justify-between hover:bg-blue-100 transition-colors active:scale-[0.98]"
+>
+  {/* Left Side */}
+  <div className="flex items-start gap-2 flex-1 pr-3">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#0A6E9C"
+      strokeWidth="2"
+      className="w-5 h-5 flex-shrink-0 mt-1"
+    >
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
 
-      {/* Address - clickable to open Google Maps */}
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=PHARMOS+Iris+Park+Talawali+Chanda+Indore+Madhya+Pradesh+453771"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-3 bg-blue-50 rounded-xl p-3 flex items-start gap-2 hover:bg-blue-100 transition-colors active:scale-[0.98] block"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0A6E9C" strokeWidth="2" className="w-5 h-5 flex-shrink-0 mt-0.5">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-          <circle cx="12" cy="10" r="3" />
-        </svg>
-        <div className="flex-1">
-          <p className="text-[#0A6E9C] font-bold text-xs flex items-center gap-1">
-            Our Store
-            <svg viewBox="0 0 16 16" fill="none" stroke="#0A6E9C" strokeWidth="1.5" className="w-3 h-3">
-              <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </p>
-          <p className="text-gray-600 text-xs leading-relaxed">PHARMOS, Iris Park, Talawali Chanda, Indore, Madhya Pradesh 453771</p>
-        </div>
-      </a>
-    </section>
+    <div>
+      <p className="text-[#0A6E9C] font-bold text-s">
+        Our Store
+      </p>
+
+      <p className="text-gray-700 text-xs leading-relaxed mt-1">
+        PHARMOS, Iris Park, Talawali Chanda, Indore,
+        Madhya Pradesh 453771
+      </p>
+    </div>
+  </div>
+
+ {/* Right Side Image */}
+<img
+  src="\location photo.png"
+  alt="Pharmos Location"
+  className="w-44 h-20 rounded-l object-cover border border-blue-100 shadow-m flex-shrink-0"
+/>
+</a>
+</section>
   );
 }

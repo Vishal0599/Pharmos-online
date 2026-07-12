@@ -1,4 +1,14 @@
-import { Heart, Truck, Home, Dumbbell, TestTubesIcon } from "lucide-react";
+import {
+  Heart,
+  Truck,
+  Home,
+  Dumbbell,
+  TestTubesIcon,
+  HeartHandshake,
+  HandHeart,
+  HeartPulse,
+  ShieldPlus,
+} from "lucide-react";
 import { openWhatsApp } from "../config";
 
 const services = [
@@ -22,7 +32,7 @@ const services = [
   },
   {
     id: "blood sample collection", 
-    label: "blood sample collec",
+    label: "blood sample collection",
     icon: TestTubesIcon ,
     iconColor: "#0A6E9C",
     tileBg: "bg-[#E8F5FF]",
@@ -30,13 +40,13 @@ const services = [
     message: "Hello Pharmos, I want a blood sample collection at home.",
   },
   {
-    id: "physio",
-    label: "Physio\nTherapy",
-    icon: Dumbbell,
+    id: "pateint care",
+    label: "patient personal care",
+    icon: HeartHandshake,
     iconColor: "#6A1B9A",
     tileBg: "bg-[#F3E5F5]",
     tileAccent: "#E1BEE7",
-    message: "Hello Pharmos, I want home physiotherapy.",
+    message: "Hello Pharmos, I want home patient personal care .",
   },
 ];
 

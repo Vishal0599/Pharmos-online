@@ -1,6 +1,12 @@
 import { openWhatsApp } from "../config";
 
-export default function ActionCards() {
+interface ActionCardsProps {
+  openDoctorModal: () => void;
+}
+
+export default function ActionCards({
+  openDoctorModal,
+}: ActionCardsProps) {
   return  (
     <div className="px-4 mt-6 grid grid-cols-2 gap-3">
       {/* Order Medicines Card */}
