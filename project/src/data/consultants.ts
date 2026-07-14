@@ -19,6 +19,7 @@ export const doctorSpecialties = [
         specialization: "Orthopedic Surgeon",
         experience: "12 Years",
         fees: "₹500",
+        photo: "/doctors-photo/dr chinmay.jpg",
       },
     ],
   },
@@ -45,6 +46,7 @@ export const doctorSpecialties = [
         specialization: "Cardiologist",
         experience: "7 Years",
         fees: "₹1200",
+        photo: "/doctors-photo/dr-arpit.png",
       },
     ],
   },
@@ -73,6 +75,7 @@ export const pharmacists = [
     specialization: "Community Health Practitioner, Medication Expert",
     experience: "8 Years",
     fees: "₹200",
+    photo: "/doctors-photo/anshgupta.jpeg",
   },
 ];
 
@@ -87,6 +90,7 @@ export const nutritionists = [
     specialization: "Community Health Practitioner",
     experience: "8 Years",
     fees: "₹700",
+    photo: "/doctors-photo/anshgupta.jpeg",
   },
 ];
 
@@ -102,5 +106,6 @@ export const physiotherapists = [
   //   specialization: "Sports Physiotherapist",
   //   experience: "7 Years",
   //   fees: "₹700",
+  //   photo: "/doctors-photo/rahul-patel.jpeg",
   // },
 ];

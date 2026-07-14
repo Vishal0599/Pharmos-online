@@ -1,5 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
-import { openWhatsApp } from "../config";
+import {
+  BadgeCheck,
+  GraduationCap,
+  Briefcase,
+  IndianRupee,
+} from "lucide-react";
 import {
   doctorSpecialties,
   pharmacists,
@@ -13,6 +18,7 @@ type Consultant = {
   specialization: string;
   experience: string;
   fees?: string;
+  photo?: string;
   category: string;
 };
 
@@ -85,6 +91,14 @@ export default function ConsultationCarousel() {
 
   const consultant = consultants[current];
 
+  // initials for the avatar placeholder, e.g. "Dr. Aditi Rao" -> "AR"
+  const initials = consultant.name
+    .replace("Dr. ", "")
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2);
+
   return (
     <section className="px-4 mt-4">
       <div className="flex items-center mb-4">
@@ -97,51 +111,80 @@ export default function ConsultationCarousel() {
 
       <div className="relative overflow-hidden bg-white rounded-3xl shadow-md border border-gray-100 p-5 transition-all duration-500">
         <div className="flex justify-between items-center">
-
-          <span className="bg-green-100 text-green-900 text-xs font-bold px-5 py-2 rounded">
-            ● Available
+          <span className="flex items-center gap-1 bg-green-50 text-green-700 text-xs font-semibold px-3 py-1.5 rounded-full">
+            <span className="h-1.5 w-1.5 rounded-full bg-green-600" />
+            Available
           </span>
 
-          <span className="text-xs text-[#0A6E9C] font-semibold">
+          <span className="bg-[#0A6E9C]/10 text-[#0A6E9C] text-xs font-semibold px-3 py-1 rounded-full">
             {consultant.category}
           </span>
-
         </div>
 
-        <h3 className="text-lg font-bold text-gray-900">
-          {consultant.name}
-        </h3>
-
-        <p className="text-gray-500 mt-1">
-          {consultant.qualification}
-        </p>
-
-        <div className="mt-2 space-y-1">
-
-          <div className="flex justify-between">
-            <span>Specialization</span>
-            <span className="font-semibold">
-              {consultant.specialization}
-            </span>
-          </div>
-
-          <div className="flex justify-between">
-            <span>Experience</span>
-            <span className="font-semibold">
-              {consultant.experience}
-            </span>
-          </div>
-        {consultant.fees && (
-            <div className="flex justify-between">
-              <span>Fees</span>
-              <span className="font-semibold text-green-600">
-                {consultant.fees}
-              </span>
+        <div className="flex items-center gap-4 mt-3">
+          {consultant.photo ? (
+            <img
+              src={consultant.photo}
+              alt={consultant.name}
+              className="h-24 w-24 shrink-0 rounded-2xl object-cover border-2 border-[#0A6E9C]/10 shadow-sm"
+            />
+          ) : (
+            <div className="h-24 w-24 shrink-0 rounded-2xl bg-[#0A6E9C]/10 flex items-center justify-center font-bold text-[#0A6E9C] text-3xl">
+              {initials}
             </div>
           )}
-
+          <div>
+            <div className="flex items-center gap-1">
+              <h3 className="text-lg font-bold text-gray-900">
+                {consultant.name}
+              </h3>
+              <BadgeCheck className="h-4 w-4 text-[#0A6E9C]" />
+            </div>
+            <p className="text-gray-500 text-sm">{consultant.qualification}</p>
+          </div>
         </div>
-                {consultants.length > 1 && (
+
+        <div className="mt-4 grid grid-cols-2 gap-3">
+          <div className="flex items-start gap-2">
+            <GraduationCap className="h-4 w-4 text-[#0A6E9C] mt-0.5" />
+            <div>
+              <p className="text-[10px] uppercase text-gray-400 font-medium">
+                Specialization
+              </p>
+              <p className="text-sm font-semibold text-gray-900">
+                {consultant.specialization}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-2">
+            <Briefcase className="h-4 w-4 text-[#0A6E9C] mt-0.5" />
+            <div>
+              <p className="text-[10px] uppercase text-gray-400 font-medium">
+                Experience
+              </p>
+              <p className="text-sm font-semibold text-gray-900">
+                {consultant.experience}
+              </p>
+            </div>
+          </div>
+
+          {consultant.fees && (
+            <div className="flex items-start gap-2">
+              <IndianRupee className="h-4 w-4 text-green-600 mt-0.5" />
+              <div>
+                <p className="text-[10px] uppercase text-gray-400 font-medium">
+                  Fees
+                </p>
+                <p className="text-sm font-semibold text-green-600">
+                  {consultant.fees}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {consultants.length > 1 && (
           <div className="flex justify-center gap-2 mt-4">
             {consultants.map((_, index) => (
               <button
@@ -156,7 +199,6 @@ export default function ConsultationCarousel() {
             ))}
           </div>
         )}
-
       </div>
     </section>
   );
