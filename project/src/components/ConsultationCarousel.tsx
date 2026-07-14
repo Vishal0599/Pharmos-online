@@ -23,40 +23,56 @@ type Consultant = {
 };
 
 export default function ConsultationCarousel() {
-  const consultants = useMemo(() => {
-    const list: Consultant[] = [];
+ const consultants = useMemo(() => {
+  const doctors: Consultant[] = [];
 
-    doctorSpecialties.forEach((specialty: any) => {
-      specialty.doctors.forEach((doctor: any) => {
-        list.push({
-          ...doctor,
-          category: specialty.name,
-        });
+  doctorSpecialties.forEach((specialty: any) => {
+    specialty.doctors.forEach((doctor: any) => {
+      doctors.push({
+        ...doctor,
+        category: specialty.name,
       });
     });
+  });
 
-    pharmacists.forEach((person: any) => {
-      list.push({
-        ...person,
-        category: "Medication Expert",
-      });
-    });
+  const list: Consultant[] = [];
 
-    nutritionists.forEach((person: any) => {
-      list.push({
-        ...person,
-        category: "Nutritionist",
-      });
-    });
+  // Doctor 1
+  if (doctors[0]) list.push(doctors[0]);
 
-    physiotherapists.forEach((person: any) => {
-      list.push({
-        ...person,
-        category: "Physiotherapist",
-      });
-    });
+  // Nutritionist
+  nutritionists.forEach((person: any) =>
+    list.push({
+      ...person,
+      category: "Nutritionist",
+    })
+  );
 
-    return list;
+  // Doctor 2
+  if (doctors[1]) list.push(doctors[1]);
+
+  // Pharmacist
+  pharmacists.forEach((person: any) =>
+    list.push({
+      ...person,
+      category: "Medication Expert",
+    })
+  );
+
+  // बाकी Doctors
+  for (let i = 2; i < doctors.length; i++) {
+    list.push(doctors[i]);
+  }
+
+  // Physiotherapists (अगर हों)
+  physiotherapists.forEach((person: any) =>
+    list.push({
+      ...person,
+      category: "Physiotherapist",
+    })
+  );
+
+  return list;
   }, []);
 
   const [current, setCurrent] = useState(0);
@@ -121,15 +137,15 @@ export default function ConsultationCarousel() {
           </span>
         </div>
 
-        <div className="flex items-center gap-4 mt-3">
+        <div className="flex items-center gap-3 mt-3">
           {consultant.photo ? (
             <img
               src={consultant.photo}
               alt={consultant.name}
-              className="h-24 w-24 shrink-0 rounded-2xl object-cover border-2 border-[#0A6E9C]/10 shadow-sm"
+              className="h-16 w-16 shrink-0 rounded-2xl object-cover border-2 border-[#0A6E9C]/10 shadow-sm"
             />
           ) : (
-            <div className="h-24 w-24 shrink-0 rounded-2xl bg-[#0A6E9C]/10 flex items-center justify-center font-bold text-[#0A6E9C] text-3xl">
+            <div className="h-16 w-16 shrink-0 rounded-2xl bg-[#0A6E9C]/10 flex items-center justify-center font-bold text-[#0A6E9C] text-xl">
               {initials}
             </div>
           )}

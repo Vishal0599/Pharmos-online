@@ -1,4 +1,18 @@
 /* ======================================================
+   NUTRITIONISTS
+====================================================== */
+
+export const nutritionists = [
+  {
+    name: "Drx. Himanshu Gupta",
+    qualification: "B.Pharm, DCMS & ED, Certified Nutritionist",
+    specialization: "Community Health Practitioner",
+    experience: "8 Years",
+    fees: "₹700",
+    photo: "/doctors-photo/anshgupta.jpeg",
+  },
+];
+/* ======================================================
    DOCTOR SPECIALTIES
 ====================================================== */
 
@@ -19,7 +33,7 @@ export const doctorSpecialties = [
         specialization: "Orthopedic Surgeon",
         experience: "12 Years",
         fees: "₹500",
-        photo: "/doctors-photo/dr chinmay.jpg",
+        photo: "/doctors-photo/dr-chinmay.jpg",
       },
     ],
   },
@@ -80,32 +94,17 @@ export const pharmacists = [
 ];
 
 /* ======================================================
-   NUTRITIONISTS
-====================================================== */
-
-export const nutritionists = [
-  {
-    name: "Drx. Himanshu Gupta",
-    qualification: "B.Pharm, DCMS & ED, Certified Nutritionist",
-    specialization: "Community Health Practitioner",
-    experience: "8 Years",
-    fees: "₹700",
-    photo: "/doctors-photo/anshgupta.jpeg",
-  },
-];
-
-/* ======================================================
    PHYSIOTHERAPISTS
 ====================================================== */
 
 export const physiotherapists = [
-  // Example:
-  // {
-  //   name: "Dr. Rahul Patel",
-  //   qualification: "BPT, MPT",
-  //   specialization: "Sports Physiotherapist",
-  //   experience: "7 Years",
-  //   fees: "₹700",
-  //   photo: "/doctors-photo/rahul-patel.jpeg",
-  // },
+
+ //  {
+   //  name: "Dr. Rahul Patel",
+     //qualification: "BPT, MPT",
+ //    specialization: "Sports Physiotherapist",
+   //  experience: "7 Years",
+    // fees: "₹700",
+    // photo: "/doctors-photo/rahul-patel.jpeg",
+   //},
 ];
