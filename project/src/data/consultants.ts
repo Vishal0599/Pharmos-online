@@ -33,7 +33,7 @@ export const doctorSpecialties = [
         specialization: "Orthopedic Surgeon",
         experience: "12 Years",
         fees: "₹500",
-        photo: "/doctors-photo/dr-chinmay.jpg",
+        photo: "/doctors-photo/dr-chinmay.png",
       },
     ],
   },
