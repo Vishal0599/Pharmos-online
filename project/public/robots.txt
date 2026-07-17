@@ -1,5 +1,3 @@
 User-agent: *
 
-Allow: /
-
-Sitemap: https://www.pharmos.in/sitemap.xml
+Allow: /Sitemap: https://www.pharmos.in/sitemap.xml
