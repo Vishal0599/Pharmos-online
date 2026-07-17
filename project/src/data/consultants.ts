@@ -99,12 +99,12 @@ export const pharmacists = [
 
 export const physiotherapists = [
 
- //  {
-   //  name: "Dr. Rahul Patel",
-     //qualification: "BPT, MPT",
- //    specialization: "Sports Physiotherapist",
-   //  experience: "7 Years",
-    // fees: "₹700",
-    // photo: "/doctors-photo/rahul-patel.jpeg",
-   //},
+   {
+     name: "Dr Siddhart Dave",
+     qualification: "BPT",
+     specialization: " Physiotherapist",
+     experience: "16 Years",
+     fees: "₹300",
+     photo: "doctors-photo/Dr-sidd.png",
+   },
 ];

@@ -156,15 +156,15 @@ export default function ConsultationCarousel() {
         {/* Card — compact row layout even on mobile to keep height small */}
         <div className="flex flex-row items-center gap-3 sm:gap-6">
           {/* Photo — smaller on mobile */}
-          <div className="relative w-16 h-16 sm:w-36 sm:h-36 shrink-0">
+          <div className="sticky w-16 h-16 sm:w-36 sm:h-36 shrink-0">
             {consultant.photo ? (
               <img
                 src={consultant.photo}
                 alt={consultant.name}
-                className="w-16 h-16 sm:w-32 sm:h-36 rounded-xl sm:rounded-2xl object-cover"
+                className="w-20 h-20 sm:w-32 sm:h-32 rounded-xl sm:rounded-2xl object-cover"
               />
             ) : (
-              <div className="w-16 h-16 sm:w-32 sm:h-36 rounded-xl sm:rounded-2xl bg-[#E8F0FB] flex items-center justify-center">
+              <div className="w-14 h-14 sm:w-32 sm:h-36 rounded-xl sm:rounded-2xl bg-[#E8F0FB] flex items-center justify-center">
                 <User className="h-6 w-6 sm:h-10 sm:w-10 text-[#0A6E9C]/30" />
               </div>
             )}
@@ -213,7 +213,7 @@ export default function ConsultationCarousel() {
               <>
                 <div className="hidden sm:block w-px self-stretch bg-gray-200" />
                 <div className="hidden sm:block sm:w-36 shrink-0">
-                  <p className="text-base text-gray-500">Consultation Fee</p>
+                  <p className="text-base text-gray-500">Consultation Fees</p>
                   <p className="flex items-center text-4xl font-bold text-green-600 mt-1">
                     <IndianRupee className="h-8 w-8" />
                     {consultant.fees.replace("₹", "")}
