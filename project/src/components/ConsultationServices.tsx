@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { X, Stethoscope, Pill, Apple, ActivityIcon } from "lucide-react";
 import { openWhatsApp } from "../config";
-
+import { useLockBodyScroll } from "./hooks/useLockBodyScroll";
 
 import {
   doctorSpecialties,
@@ -79,12 +79,21 @@ export default function ConsultationServices({
   showDoctorModal,
   setShowDoctorModal,
 }: ConsultationServicesProps) {
-  
+
   const [showPharmacistModal, setShowPharmacistModal] = useState(false);
   const [showNutritionModal, setShowNutritionModal] = useState(false);
   const [showPhysioModal, setShowPhysioModal] = useState(false);
 
   const [selectedSpecialty, setSelectedSpecialty] = useState<any>(null);
+
+  // Locks background scroll whenever ANY of the 4 modals is open,
+  // and restores it when all are closed or the component unmounts.
+  useLockBodyScroll(
+    showDoctorModal ||
+      showPharmacistModal ||
+      showNutritionModal ||
+      showPhysioModal
+  );
 
   const handleServiceClick = (id: string, label: string) => {
     switch (id) {
@@ -321,6 +330,12 @@ export default function ConsultationServices({
               </button>
             </div>
 
+            {pharmacists.length === 0 && (
+              <div className="text-center py-10 text-gray-500">
+                Pharmacist will be available soon.
+              </div>
+            )}
+
             {pharmacists.map((doctor) => (
               <div
                 key={doctor.name}
@@ -383,6 +398,12 @@ export default function ConsultationServices({
               </button>
             </div>
 
+            {nutritionists.length === 0 && (
+              <div className="text-center py-10 text-gray-500">
+                Nutritionist will be available soon.
+              </div>
+            )}
+
             {nutritionists.map((doctor) => (
               <div
                 key={doctor.name}
@@ -444,6 +465,12 @@ export default function ConsultationServices({
                 <X />
               </button>
             </div>
+
+            {physiotherapists.length === 0 && (
+              <div className="text-center py-10 text-gray-500">
+                Physiotherapist will be available soon.
+              </div>
+            )}
 
             {physiotherapists.map((doctor) => (
               <div
