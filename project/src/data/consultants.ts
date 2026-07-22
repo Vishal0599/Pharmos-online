@@ -75,11 +75,11 @@ export const doctorSpecialties = [
     name: "Dentist",
     emoji: "🦷",
     doctors: [{
-    name: "Dr Amita Bankey gurjar",
+    name: "Dr Amita Bankey Gurjar",
     qualification: "BDS",
     specialization: "Dentist",
     experience: "10 Years",
-    fees: "₹200",
+    fees: "₹300",
     photo: "/doctors-photo/dr-amita.jpeg",
   },],
   },
